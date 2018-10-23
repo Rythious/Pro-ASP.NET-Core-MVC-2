@@ -31,7 +31,7 @@ namespace WorkingWithVS.Tests
             p.Price = 200M;
 
             //Assert
-            Assert.Equal(100M, p.Price);
+            Assert.Equal(200M, p.Price);
         }
     }
 }
