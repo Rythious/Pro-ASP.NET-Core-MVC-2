@@ -14,7 +14,7 @@ namespace ControllersAndActions.Controllers
 
         public IActionResult ReceiveForm(string name, string city)
         {
-            return new CustomHtmlResult { Content = $"{name} lives in {city}" };
+            return View("Result", $"{name} lives in {city}");
         }
     }
 }
