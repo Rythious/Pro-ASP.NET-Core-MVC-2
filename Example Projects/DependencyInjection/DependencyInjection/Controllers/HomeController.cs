@@ -5,23 +5,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DependencyInjection.Controllers
 {
     public class HomeController : Controller
     {
-        private IRepository repository;
-        private ProductTotalizer totalizer;
-
-        public HomeController(IRepository repo, ProductTotalizer total)
+        public ViewResult Index([FromServices]ProductTotalizer totalizer)
         {
-            repository = repo;
-            totalizer = total;
-        }
+            IRepository repository = HttpContext.RequestServices.GetService<IRepository>();
 
-        public ViewResult Index()
-        {
-            ViewBag.Total = totalizer.Total;
+            ViewBag.HomeController = repository.ToString();
+            ViewBag.Totalizer = totalizer.Repository.ToString(); ;
             return View(repository.Products);
         }
     }
