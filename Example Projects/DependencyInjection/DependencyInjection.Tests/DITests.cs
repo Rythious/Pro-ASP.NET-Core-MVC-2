@@ -1,4 +1,5 @@
 ﻿using DependencyInjection.Controllers;
+using DependencyInjection.Infrastructure;
 using DependencyInjection.Models;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
@@ -18,7 +19,7 @@ namespace DependencyInjection.Tests
             var data = new[] { new Product { Name = "Test", Price = 100 } };
             var mock = new Mock<IRepository>();
             mock.SetupGet(m => m.Products).Returns(data);
-            HomeController controller = new HomeController { Repository = mock.Object };
+            HomeController controller = new HomeController(mock.Object);
 
             //Act
             ViewResult result = controller.Index();
