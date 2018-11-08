@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Filters.Controllers
 {
-    [HttpsOnly]
+    [Profile]
     public class HomeController : Controller
     {
         public ViewResult Index()
