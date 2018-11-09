@@ -8,17 +8,11 @@ using System.Threading.Tasks;
 
 namespace Filters.Controllers
 {
-    [Profile]
+    [Message("This is the Controller-Scoped Filter", Order = 10)]
     public class HomeController : Controller
     {
-        public ViewResult Index()
-        {
-            return View("Message", "This is the Index action on the Home controller");
-        }
-
-        public ViewResult SecondAction()
-        {
-            return View("Message", "This is the SecondAction action on the Home controller");
-        }
+        [Message("This is the First Action-Scoped Filter", Order = 1)]
+        [Message("This is the Second Action-Scoped Filter", Order = -1)]
+        public ViewResult Index() => View("Message", "This is the Index action on the Home controller");
     }
 }
