@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ApiControllers.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using ApiControllers.Models;
+using Microsoft.Net.Http.Headers;
 
 namespace ApiControllers
 {
@@ -17,7 +18,13 @@ namespace ApiControllers
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IRepository, MemoryRepository>();
-            services.AddMvc();
+            services.AddMvc()
+                .AddXmlDataContractSerializerFormatters()
+                .AddMvcOptions(opts => {
+                    opts.FormatterMappings.SetMediaTypeMappingForFormat("xml", new MediaTypeHeaderValue("application/xml"));
+                    opts.RespectBrowserAcceptHeader = true;
+                    opts.ReturnHttpNotAcceptable = true;
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
