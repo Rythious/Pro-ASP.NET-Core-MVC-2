@@ -4,15 +4,21 @@
 
 <form method="post" asp-controller="Home" asp-action="Create" asp-antiforgery="true">
     <div class="form-group">
-        <label for="Name">Name:</label> 
+        <label asp-for="Name"></label> 
         <input class="form-control" asp-for="Name" />
     </div>
     <div class="form-group">
-        <label for="Country">Country:</label> 
-        <input class="form-control" asp-for="Country" />
+        <label asp-for="Country"></label> 
+        <select class="form-control" asp-for="Country">
+            <option disabled selected value="">Select a Country</option>
+            <option>UK</option>
+            <option>USA</option>
+            <option>France</option>
+            <option>China</option>
+        </select>
     </div>
     <div class="form-group">
-        <label for="Population">Population:</label> 
+        <label asp-for="Population"></label> 
         <input class="form-control" asp-for="Population"/>
     </div>
 
