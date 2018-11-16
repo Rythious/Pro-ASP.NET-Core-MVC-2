@@ -1,4 +1,5 @@
 ﻿@model City
+@addTagHelper Cities.Infrastructure.TagHelpers.SelectOptionTagHelper, Cities
 
 @{ Layout = "_Layout"; }
 
@@ -9,17 +10,17 @@
     </div>
     <div class="form-group">
         <label asp-for="Country"></label> 
-        <select class="form-control" asp-for="Country">
+        <select class="form-control" asp-for="Country" model-for="Country">
             <option disabled selected value="">Select a Country</option>
-            <option>UK</option>
-            <option>USA</option>
-            <option>France</option>
-            <option>China</option>
         </select>
     </div>
     <div class="form-group">
         <label asp-for="Population"></label> 
         <input class="form-control" asp-for="Population"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="Notes"></label>
+        <textarea class="form-control" asp-for="Notes"></textarea>
     </div>
 
     <button type="submit" class="btn btn-primary">Add</button>
