@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
@@ -49,6 +49,11 @@ namespace Users
                 });
             });
 
+            services.AddAuthentication().AddGoogle(opts =>
+            {
+                opts.ClientId = "can be found here https://console.developers.google.com/apis/credentials?project=asp-net-core-mvc-1542715388763";
+                opts.ClientSecret = "can be found here https://console.developers.google.com/apis/credentials?project=asp-net-core-mvc-1542715388763";
+            });
 
             services.AddDbContext<AppIdentityDbContext>(options => options.UseSqlServer(Configuration["Data:SportsStoreIdentity:ConnectionString"]));
             services.AddIdentity<AppUser, IdentityRole>(opts => 
