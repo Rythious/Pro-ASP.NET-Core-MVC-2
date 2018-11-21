@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConventionsAndConstraints", "ConventionsAndConstraints\ConventionsAndConstraints.csproj", "{86F90D3D-1834-469C-9E64-9665176CE293}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86F90D3D-1834-469C-9E64-9665176CE293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86F90D3D-1834-469C-9E64-9665176CE293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86F90D3D-1834-469C-9E64-9665176CE293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86F90D3D-1834-469C-9E64-9665176CE293}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6BBCFE8-87D9-4A20-B5EF-0180ECB427E0}
+	EndGlobalSection
+EndGlobal
